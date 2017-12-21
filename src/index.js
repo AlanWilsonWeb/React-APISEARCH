@@ -26,7 +26,9 @@ import reducEm from "./reducers/reducEm";
 //   pathname = window.location.pathname;
 // });
 const store = createStore(reducEm);
-
+store.subscribe(() =>
+  console.log(store.getState())
+)
 render(
   <Provider store={store}>
   <Search />

@@ -12,7 +12,7 @@ class Search extends React.Component {
   };
 
   searchGithub = () => {
-    fetch("https://api.github.com/search/repositories?q=" + this.state.search)
+    fetch('https://api.github.com/search/repositories?q=' + this.state.search + '&type=Repositories&sort=stars&per_page=10')
       .then(resp => resp.json())
       .then(respJson => {
         this.props.dispatch(saveRepos(respJson.items));
