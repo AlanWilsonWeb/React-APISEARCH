@@ -5,6 +5,7 @@ import { saveRepos } from "./actions/AppActions";
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducEm from "./reducers/reducEm";
+// import finalSelector from "./Selector";
 
 class Search extends React.Component {
   state = {
@@ -47,9 +48,7 @@ class Search extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return {
-    repos: state.repos
-  };
+  return {repos: state.repos};
 };
 
 export default connect(mapStateToProps)(Search);
