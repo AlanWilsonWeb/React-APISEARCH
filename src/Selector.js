@@ -2,7 +2,7 @@
 //
 // const resultsSelector = state => state.repos;
 // const finalSelector = createSelector(resultsSelector,
-//   (results) => results.map(id => {
+//   (results) => state.repos.map(id => {
 //     const result = results[id];
 //   })
 // );

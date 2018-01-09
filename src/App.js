@@ -9,17 +9,31 @@ import reducEm from "./reducers/reducEm";
 let searchResults = "";
 let nextStep = "";
 const store = createStore(reducEm);
-store.subscribe(() => {
-searchResults = store.getState().repos;
-console.log(searchResults);
-  }
-);
 
 class FinalResults extends React.Component {
+
+  state = {
+    repos: []
+  }
+
+  componentDidMount() {
+    store.subscribe(() => {
+      // When state will be updated(in our case, when items will be fetched),
+      // we will update local component state and force component to rerender
+      // with new data.
+
+      console.log(store.getState().repos);
+
+      this.setState({
+        repos: store.getState().repos
+      });
+    });
+  }
+
   render() {
     return(
     <div><h1>Results Go Here</h1>
-      {/* {store.getState().repos.map((repo) => <p>{repo}</p> )} */}
+      {this.state.repos.map((repo, index) => <p key={index}>{repo.name}</p> )}
     </div>
   );
   }

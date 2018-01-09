@@ -7,4 +7,4 @@ let reducEm = (state = {}, action) => {
   }
 };
 
-export default reducEm
+export default reducEm;

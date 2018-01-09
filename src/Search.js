@@ -18,7 +18,6 @@ class Search extends React.Component {
       .then(respJson => {
         this.props.dispatch(saveRepos(respJson.items));
       })
-      .catch(err => console.log("Error fetching query"));
     };
 
   handleSubmit = e => {
