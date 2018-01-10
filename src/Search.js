@@ -5,7 +5,7 @@ import { saveRepos } from "./actions/AppActions";
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducEm from "./reducers/reducEm";
-// import finalSelector from "./Selector";
+
 
 class Search extends React.Component {
   state = {

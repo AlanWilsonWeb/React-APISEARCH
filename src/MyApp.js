@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from './components/Header';
 import { render } from 'react-dom';
-import Search from './Search';
+import MySearch from './MySearch';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducEm from "./reducers/reducEm";
 
 const store = createStore(reducEm);
 
-class FinalResults extends React.Component {
+class MyFinalResults extends React.Component {
 
   state = {
     repos: []
@@ -30,7 +30,7 @@ class FinalResults extends React.Component {
 
   render() {
     return(
-    <div><h2>Search Results:</h2>
+    <div>
       {this.state.repos.map((repo, index) => <div key={index}>
         <div id={repo.id} className="fullrepo">
           <a href={repo.owner.html_url}><div className="leftside">
@@ -48,17 +48,17 @@ class FinalResults extends React.Component {
   }
   }
 
-class App extends React.Component {
+class MyApp extends React.Component {
   render() {
     return(
   <div>
   <Provider store={store}>
-  <Search />
+  <MySearch />
   </Provider>
-  <FinalResults />
+  <MyFinalResults />
 </div>
 );
 }
 }
 
-export default App;
+export default MyApp;
