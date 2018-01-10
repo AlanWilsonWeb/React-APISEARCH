@@ -32,9 +32,20 @@ class FinalResults extends React.Component {
 
   render() {
     return(
-    <div><h1>Results Go Here</h1>
-      {this.state.repos.map((repo, index) => <p key={index}>{repo.name}</p> )}
-    </div>
+    <div><h2>Search Results:</h2>
+      {this.state.repos.map((repo, index) => <div key={index}>
+        <div id={repo.id} className="fullrepo">
+          <a href={repo.owner.html_url}><div className="leftside">
+            <div className="piccarrier"><img className="userpic" src={repo.owner.avatar_url} /></div>
+            <div className="username">{repo.owner.login}</div>
+          </div></a>
+          <a href={repo.html_url}><div className="rightside">
+            <div className="repotitle"><h3>{repo.name}</h3></div>
+            <div className="description">{repo.description}</div>
+          </div></a>
+      </div>
+    </div> )}
+  </div>
   );
   }
   }

@@ -1,7 +1,7 @@
 import React, { component } from 'react';
 import { render } from 'react-dom';
 import { Home, Mine, Searchp } from './screens';
-
+import style from './index.css';
 
 const Index = ({ pathname }) => {
   switch(pathname) {
